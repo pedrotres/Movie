@@ -28,6 +28,9 @@
 		BBD4099C2B19394C008773F6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4099B2B19394C008773F6 /* LoadingView.swift */; };
 		BBD4099E2B1939B0008773F6 /* LoadingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4099D2B1939B0008773F6 /* LoadingViewConfiguration.swift */; };
 		BBD409A02B193A18008773F6 /* LoadingViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4099F2B193A18008773F6 /* LoadingViewSnapshotTests.swift */; };
+		BBD409A62B193C30008773F6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD409A52B193C30008773F6 /* EmptyView.swift */; };
+		BBD409A82B193C95008773F6 /* EmptyViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD409A72B193C95008773F6 /* EmptyViewConfiguration.swift */; };
+		BBD409AA2B193D21008773F6 /* EmptyViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD409A92B193D21008773F6 /* EmptyViewSnapshotTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		BBD4099B2B19394C008773F6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BBD4099D2B1939B0008773F6 /* LoadingViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewConfiguration.swift; sourceTree = "<group>"; };
 		BBD4099F2B193A18008773F6 /* LoadingViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSnapshotTests.swift; sourceTree = "<group>"; };
+		BBD409A52B193C30008773F6 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		BBD409A72B193C95008773F6 /* EmptyViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewConfiguration.swift; sourceTree = "<group>"; };
+		BBD409A92B193D21008773F6 /* EmptyViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewSnapshotTests.swift; sourceTree = "<group>"; };
 		D696DC78E75BE923D9477D41 /* Pods_Movie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB6A5190FD354B498F09871 /* Pods-Movie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie.release.xcconfig"; path = "Target Support Files/Pods-Movie/Pods-Movie.release.xcconfig"; sourceTree = "<group>"; };
 		F61C54F2A2278ABDFA80E4B7 /* Pods-MovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTests.release.xcconfig"; path = "Target Support Files/Pods-MovieTests/Pods-MovieTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 			children = (
 				BBA0F3232B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift */,
 				BBD4099F2B193A18008773F6 /* LoadingViewSnapshotTests.swift */,
+				BBD409A92B193D21008773F6 /* EmptyViewSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";
@@ -129,8 +136,9 @@
 		BBA0F3262B18B1CC00ADA841 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BBD409A42B193C23008773F6 /* EmptyView */,
+				BBD409A12B193BDC008773F6 /* Cell */,
 				BBD4099A2B19393F008773F6 /* LoadingView */,
-				BBA0F3272B18B1CC00ADA841 /* MovieListCellView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -257,6 +265,23 @@
 				BBD4099D2B1939B0008773F6 /* LoadingViewConfiguration.swift */,
 			);
 			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		BBD409A12B193BDC008773F6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BBA0F3272B18B1CC00ADA841 /* MovieListCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BBD409A42B193C23008773F6 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				BBD409A52B193C30008773F6 /* EmptyView.swift */,
+				BBD409A72B193C95008773F6 /* EmptyViewConfiguration.swift */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		C84152E07727D1DB0A55EED7 /* Frameworks */ = {
@@ -508,7 +533,9 @@
 				BBBBF45E2B18102400B5CF9B /* SceneDelegate.swift in Sources */,
 				BBA0F3282B18B1CC00ADA841 /* MovieListCellView.swift in Sources */,
 				BBD4099E2B1939B0008773F6 /* LoadingViewConfiguration.swift in Sources */,
+				BBD409A62B193C30008773F6 /* EmptyView.swift in Sources */,
 				BBD4099C2B19394C008773F6 /* LoadingView.swift in Sources */,
+				BBD409A82B193C95008773F6 /* EmptyViewConfiguration.swift in Sources */,
 				BBBBF4942B181D1100B5CF9B /* Movie.swift in Sources */,
 				BBBBF4962B18205E00B5CF9B /* NetworkClient.swift in Sources */,
 			);
@@ -522,6 +549,7 @@
 				BBA0F3242B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift in Sources */,
 				BBD409A02B193A18008773F6 /* LoadingViewSnapshotTests.swift in Sources */,
 				BBBBF49F2B18323F00B5CF9B /* MovieDataJson.swift in Sources */,
+				BBD409AA2B193D21008773F6 /* EmptyViewSnapshotTests.swift in Sources */,
 				BBBBF4732B18102500B5CF9B /* MovieServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
