@@ -25,6 +25,9 @@
 		BBBBF4962B18205E00B5CF9B /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF4952B18205E00B5CF9B /* NetworkClient.swift */; };
 		BBBBF49F2B18323F00B5CF9B /* MovieDataJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF49E2B18323F00B5CF9B /* MovieDataJson.swift */; };
 		BBBBF4A12B1839A400B5CF9B /* NetworkClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF4A02B1839A400B5CF9B /* NetworkClientSpy.swift */; };
+		BBD4099C2B19394C008773F6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4099B2B19394C008773F6 /* LoadingView.swift */; };
+		BBD4099E2B1939B0008773F6 /* LoadingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4099D2B1939B0008773F6 /* LoadingViewConfiguration.swift */; };
+		BBD409A02B193A18008773F6 /* LoadingViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4099F2B193A18008773F6 /* LoadingViewSnapshotTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		BBBBF4952B18205E00B5CF9B /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		BBBBF49E2B18323F00B5CF9B /* MovieDataJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataJson.swift; sourceTree = "<group>"; };
 		BBBBF4A02B1839A400B5CF9B /* NetworkClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientSpy.swift; sourceTree = "<group>"; };
+		BBD4099B2B19394C008773F6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BBD4099D2B1939B0008773F6 /* LoadingViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewConfiguration.swift; sourceTree = "<group>"; };
+		BBD4099F2B193A18008773F6 /* LoadingViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSnapshotTests.swift; sourceTree = "<group>"; };
 		D696DC78E75BE923D9477D41 /* Pods_Movie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB6A5190FD354B498F09871 /* Pods-Movie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie.release.xcconfig"; path = "Target Support Files/Pods-Movie/Pods-Movie.release.xcconfig"; sourceTree = "<group>"; };
 		F61C54F2A2278ABDFA80E4B7 /* Pods-MovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTests.release.xcconfig"; path = "Target Support Files/Pods-MovieTests/Pods-MovieTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA0F3232B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift */,
+				BBD4099F2B193A18008773F6 /* LoadingViewSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 		BBA0F3262B18B1CC00ADA841 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BBD4099A2B19393F008773F6 /* LoadingView */,
 				BBA0F3272B18B1CC00ADA841 /* MovieListCellView.swift */,
 			);
 			path = Components;
@@ -240,6 +248,15 @@
 				BBBBF4722B18102500B5CF9B /* MovieServiceTests.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BBD4099A2B19393F008773F6 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				BBD4099B2B19394C008773F6 /* LoadingView.swift */,
+				BBD4099D2B1939B0008773F6 /* LoadingViewConfiguration.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		C84152E07727D1DB0A55EED7 /* Frameworks */ = {
@@ -490,6 +507,8 @@
 				BBBBF45C2B18102400B5CF9B /* AppDelegate.swift in Sources */,
 				BBBBF45E2B18102400B5CF9B /* SceneDelegate.swift in Sources */,
 				BBA0F3282B18B1CC00ADA841 /* MovieListCellView.swift in Sources */,
+				BBD4099E2B1939B0008773F6 /* LoadingViewConfiguration.swift in Sources */,
+				BBD4099C2B19394C008773F6 /* LoadingView.swift in Sources */,
 				BBBBF4942B181D1100B5CF9B /* Movie.swift in Sources */,
 				BBBBF4962B18205E00B5CF9B /* NetworkClient.swift in Sources */,
 			);
@@ -501,6 +520,7 @@
 			files = (
 				BBBBF4A12B1839A400B5CF9B /* NetworkClientSpy.swift in Sources */,
 				BBA0F3242B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift in Sources */,
+				BBD409A02B193A18008773F6 /* LoadingViewSnapshotTests.swift in Sources */,
 				BBBBF49F2B18323F00B5CF9B /* MovieDataJson.swift in Sources */,
 				BBBBF4732B18102500B5CF9B /* MovieServiceTests.swift in Sources */,
 			);
