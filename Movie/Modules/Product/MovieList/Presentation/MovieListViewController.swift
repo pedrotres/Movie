@@ -11,19 +11,26 @@ import UIKit
 final class MovieListViewController: UIViewController {
     
     private lazy var listView: MovieListView = {
-        let listView = MovieListView()
+        let listView = MovieListView(
+            tableViewDataSource: self,
+            tableViewDelegate: self
+        )
         listView.delegate = self
         return listView
     }()
     
     lazy var searchController = UISearchController(searchResultsController: nil)
     
-    private let service = MovieService(networkClient: NetworkClient())
+    private (set) var listItems: [Movie.Search] = []
     
-    init() {
+    var presenter: MovieListPresenterProtocol
+    
+    init(presenter: MovieListPresenterProtocol) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,24 +41,10 @@ final class MovieListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchMovies(title: "Batman")
+        presenter.didTapSearch(title: "Batman")
         self.configureNavigationBar()
     }
     
-    private func fetchMovies(title: String){
-        self.service.fetchMovies(title){ repositories in
-            guard let repositories = repositories else {
-                return
-            }
-            
-            let configuration = MovieListViewConfiguration.list(repositories.search)
-            
-            DispatchQueue.main.async {
-                self.listView.updateView(with: configuration)
-            }
-        }
-    }
-      
     func navigateToDetails() {
         //Next PR's
     }
@@ -86,8 +79,52 @@ extension MovieListViewController: UISearchBarDelegate {
         }
         
         let configuration = MovieListViewConfiguration.loading
+        
         self.listView.updateView(with: configuration)
-        self.fetchMovies(title: text)
+        presenter.didTapSearch(title: text)
         searchBar.text = ""
+    }
+}
+
+extension MovieListViewController: MovieListPresenterDelegate {
+    func showData(_ movie: Movie) {
+        
+        DispatchQueue.main.async {
+            self.listItems = movie.search
+            let configuration = MovieListViewConfiguration.list(movie.search)
+            self.listView.updateView(with: configuration)
+        }
+    }
+}
+
+extension MovieListViewController: UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.listItems.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieListCellView.classIdentifier(), for: indexPath) as? MovieListCellView
+        
+        cell?.updateView(with: .init(
+            movieTitle: listItems[indexPath.row].title,
+            movieYear: listItems[indexPath.row].year,
+            imageURL: listItems[indexPath.row].imageURL
+        ))
+        
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+}
+
+extension MovieListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.dismiss(animated: true)
     }
 }
