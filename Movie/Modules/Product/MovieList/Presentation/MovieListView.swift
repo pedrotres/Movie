@@ -130,14 +130,15 @@ extension MovieListView: UITableViewDataSource {
         
         cell?.updateView(with: .init(
             movieTitle: listItems[indexPath.row].title,
-            movieYear: listItems[indexPath.row].year
+            movieYear: listItems[indexPath.row].year,
+            imageURL: listItems[indexPath.row].imageURL
         ))
         
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 120
     }
 }
 

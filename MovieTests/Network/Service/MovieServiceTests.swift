@@ -20,9 +20,12 @@ final class MovieServiceTests: XCTestCase {
     func test_fetchMovies_shouldCallWithSuccess() {
         networkSpy.dataToBeReturned = movieDataJson
         
-        let mockedMovieList = [
-            Movie(title: "Batman Begins", year: "2005", imdbID: "tt0372784", imageURL: "https://www.google.com.br")
-        ]
+        let mockedMovieList =  Movie(search: [.init(
+            title: "Batman Begins",
+            year: "2005",
+            imdbID: "tt0372784",
+            imageURL: URL(string: "https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg")!
+        )])
         
         sut.fetchMovies("") { movielist in
             XCTAssertEqual(movielist, mockedMovieList)

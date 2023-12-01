@@ -10,9 +10,34 @@ import UIKit
 struct MovieListCellViewConfiguration {
     let movieTitle: String
     let movieYear: String
+    let imageURL: URL
 }
 
 final class MovieListCellView: UITableViewCell {
+    
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView(frame: .zero)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.spacing = 16
+        stack.alignment = .center
+        return stack
+    }()
+    
+    private var labelsStackView: UIStackView = {
+        let stack = UIStackView(frame: .zero)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 8
+        return stack
+    }()
+    
+    private let posterImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = imageView.frame.height / 2
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
     
     private let movieTitleLabel: UILabel = {
       let label = UILabel()
@@ -26,16 +51,7 @@ final class MovieListCellView: UITableViewCell {
      label.textColor = .lightGray
      return label
   }()
-    
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [movieTitleLabel, movieYearLabel])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        return stackView
-    }()
-
-    
+        
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -51,6 +67,8 @@ final class MovieListCellView: UITableViewCell {
     func updateView(with configuration: MovieListCellViewConfiguration) {
         movieTitleLabel.text = configuration.movieTitle
         movieYearLabel.text = configuration.movieYear
+        posterImageView.downloaded(from: configuration.imageURL)
+        
     }
 }
 
@@ -58,12 +76,24 @@ extension MovieListCellView {
     
     func configureSubviews() {
         addSubview(stackView)
+        
+        stackView.addArrangedSubview(posterImageView)
+        stackView.addArrangedSubview(labelsStackView)
+
+        labelsStackView.addArrangedSubview(movieTitleLabel)
+        labelsStackView.addArrangedSubview(movieYearLabel)
     }
     
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+
+            posterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            posterImageView.widthAnchor.constraint(equalToConstant: 80),
+            posterImageView.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     

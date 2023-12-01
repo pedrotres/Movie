@@ -14,6 +14,7 @@
 		BB33B3C32B19619800092775 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB33B3C22B19619800092775 /* MovieListViewController.swift */; };
 		BB33B3C62B1963BD00092775 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB33B3C52B1963BD00092775 /* UITableViewCell+Extensions.swift */; };
 		BB33B3C82B1964AA00092775 /* MovieListViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB33B3C72B1964AA00092775 /* MovieListViewConfiguration.swift */; };
+		BB33B3CA2B198FBD00092775 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB33B3C92B198FBD00092775 /* UIImage+Extensions.swift */; };
 		BBA0F3242B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0F3232B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift */; };
 		BBA0F3282B18B1CC00ADA841 /* MovieListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0F3272B18B1CC00ADA841 /* MovieListCellView.swift */; };
 		BBBBF45C2B18102400B5CF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF45B2B18102400B5CF9B /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		BB33B3C22B19619800092775 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		BB33B3C52B1963BD00092775 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		BB33B3C72B1964AA00092775 /* MovieListViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewConfiguration.swift; sourceTree = "<group>"; };
+		BB33B3C92B198FBD00092775 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		BBA0F3232B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListCellViewSnapshotTests.swift; sourceTree = "<group>"; };
 		BBA0F3272B18B1CC00ADA841 /* MovieListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListCellView.swift; sourceTree = "<group>"; };
 		BBBBF4582B18102400B5CF9B /* Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				BB33B3C52B1963BD00092775 /* UITableViewCell+Extensions.swift */,
+				BB33B3C92B198FBD00092775 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				BB33B3C82B1964AA00092775 /* MovieListViewConfiguration.swift in Sources */,
 				BBD4099C2B19394C008773F6 /* LoadingView.swift in Sources */,
 				BBD409A82B193C95008773F6 /* EmptyViewConfiguration.swift in Sources */,
+				BB33B3CA2B198FBD00092775 /* UIImage+Extensions.swift in Sources */,
 				BBBBF4942B181D1100B5CF9B /* Movie.swift in Sources */,
 				BBBBF4962B18205E00B5CF9B /* NetworkClient.swift in Sources */,
 			);

@@ -31,7 +31,7 @@ extension Movie {
         public let title: String
         public let year: String
         public let imdbID: String
-        public let imageURL: String
+        public let imageURL: URL
         
         // MARK: - CodingKeys
         
