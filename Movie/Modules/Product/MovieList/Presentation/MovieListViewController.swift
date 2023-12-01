@@ -21,7 +21,7 @@ final class MovieListViewController: UIViewController {
     
     lazy var searchController = UISearchController(searchResultsController: nil)
     
-    private var listItems: [Movie.Search] = []
+    private (set) var listItems: [Movie.Search] = []
     
     var presenter: MovieListPresenterProtocol
     
