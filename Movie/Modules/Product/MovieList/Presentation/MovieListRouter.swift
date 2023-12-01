@@ -15,7 +15,7 @@ final class MovieListRouter: MovieListRouterProtocol {
     static func createModule() -> UIViewController {
         let networkClient = NetworkClient()
         let service = MovieService(networkClient: networkClient)
-        let interactor = ContactListInteractor(service: service)
+        let interactor = MovieListInteractor(service: service)
         let router = MovieListRouter()
         let presenter: MovieListInterable = MovieListPresenter(
             interactor: interactor,

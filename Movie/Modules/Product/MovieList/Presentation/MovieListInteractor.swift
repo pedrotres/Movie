@@ -11,7 +11,7 @@ protocol MovieListInteractorDelegate: AnyObject {
     func didFetchData(movie: Movie)
 }
 
-final class ContactListInteractor: MovieListInteractorProtocol {
+final class MovieListInteractor: MovieListInteractorProtocol {
     weak var presenter: MovieListInteractorDelegate?
     private let service: MovieServiceProtocol
 
