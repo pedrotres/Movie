@@ -18,6 +18,10 @@ DerivedData/
 xcuserdata/
 .DS_Store
 
+## xCodegen
+*.xcodeproj/*
+*.xcworkspace/*
+
 ## Other
 *.moved-aside
 *.xccheckout

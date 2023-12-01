@@ -1,0 +1,51 @@
+name: Movie
+options:
+  bundleIdPrefix: br.pedro.com.Movie
+  deploymentTarget:
+    iOS: 15.0
+  postGenCommand: pod install
+
+targets:
+  Movie:
+    type: application
+    platform: iOS
+    sources: 
+      - Movie
+    scheme:
+      testTargets:
+      - MovieTests
+
+    info:
+      path: Movie/Resources/Info.plist
+      properties:
+        UISupportedInterfaceOrientations: []
+        NSAppTransportSecurity: true
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+
+  MovieTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: MovieTests
+        includes:
+          - "**/*.swift"
+
+    settings:
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Movie.app/Movie"
+
+    info:
+      path: MovieTests/Info.plist
+      
+  MovieUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: MovieUITests
+    dependencies:
+      - target: Movie
