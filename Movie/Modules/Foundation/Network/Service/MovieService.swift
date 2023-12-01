@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MovieServiceProtocol {
-    func fetchMovies (_ name: String, _ completion: @escaping ([Movie]?) -> Void)
+    func fetchMovies (_ name: String, _ completion: @escaping (Movie?) -> Void)
 }
 
 final class MovieService: MovieServiceProtocol {
@@ -23,8 +23,8 @@ final class MovieService: MovieServiceProtocol {
         self.networkClient = networkClient
     }
     
-    func fetchMovies(_ name: String, _ completion: @escaping ([Movie]?) -> Void) {
-        let url = URL(string:"http://www.omdbapi.com/?s=\(name)&apikey=15ef78e5")!
+    func fetchMovies(_ name: String, _ completion: @escaping (Movie?) -> Void) {
+        let url = URL(string:"https://www.omdbapi.com/?s=\(name)&apikey=15ef78e5")!
         
         networkClient.performRequest(with: url) { data in
             guard let data = data else {
@@ -35,7 +35,7 @@ final class MovieService: MovieServiceProtocol {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let movies = try decoder.decode([Movie].self, from: data)
+                let movies = try decoder.decode(Movie.self, from: data)
                 completion(movies)
             } catch {
                 completion(nil)

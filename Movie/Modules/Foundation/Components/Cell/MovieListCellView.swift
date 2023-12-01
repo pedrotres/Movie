@@ -8,8 +8,8 @@
 import UIKit
 
 struct MovieListCellViewConfiguration {
-    let repositoryLabel: String
-    let repositoryOwnerLabel: String
+    let movieTitle: String
+    let movieYear: String
 }
 
 final class MovieListCellView: UITableViewCell {
@@ -49,8 +49,8 @@ final class MovieListCellView: UITableViewCell {
     }
     
     func updateView(with configuration: MovieListCellViewConfiguration) {
-        movieTitleLabel.text = configuration.repositoryLabel
-        movieYearLabel.text = configuration.repositoryOwnerLabel
+        movieTitleLabel.text = configuration.movieTitle
+        movieYearLabel.text = configuration.movieYear
     }
 }
 
