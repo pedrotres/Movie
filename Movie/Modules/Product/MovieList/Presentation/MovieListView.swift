@@ -26,8 +26,6 @@ final class MovieListView: UIView {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(MovieListCellView.self, forCellReuseIdentifier: MovieListCellView.classIdentifier())
-        tableView.dataSource = self
-        tableView.delegate = self
         return tableView
     }()
     
@@ -37,15 +35,22 @@ final class MovieListView: UIView {
         return view
     }()
     
-    init() {
-        
+    init(tableViewDataSource: UITableViewDataSource, tableViewDelegate: UITableViewDelegate) {
         super.init(frame: .zero)
+        tableView.dataSource = tableViewDataSource
+        tableView.delegate = tableViewDelegate
         
         self.customizeInterface()
+        
+        loadData()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func loadData() {
+        self.tableView.reloadData()
     }
 }
 
@@ -114,39 +119,5 @@ extension MovieListView {
     
     func showEmpty() {
         
-    }
-}
-
-extension MovieListView: UITableViewDataSource {
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.listItems.count
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: MovieListCellView.classIdentifier(), for: indexPath) as? MovieListCellView
-        
-        cell?.updateView(with: .init(
-            movieTitle: listItems[indexPath.row].title,
-            movieYear: listItems[indexPath.row].year,
-            imageURL: listItems[indexPath.row].imageURL
-        ))
-        
-        return cell ?? UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-}
-
-extension MovieListView: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let repository = listItems[indexPath.row]
-        delegate?.didSelectMovie(repository)
     }
 }
