@@ -24,7 +24,7 @@ final class MovieService: MovieServiceProtocol {
     }
     
     func fetchMovies(_ name: String, _ completion: @escaping (Movie?) -> Void) {
-        let url = URL(string:"https://www.omdbapi.com/?s=\(name)&apikey=15ef78e5")!
+        guard let url = URL(string:"https://www.omdbapi.com/?s=\(name)&apikey=15ef78e5") else { return }
         
         networkClient.performRequest(with: url) { data in
             guard let data = data else {

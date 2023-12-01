@@ -14,7 +14,7 @@ final class MovieServiceTests: XCTestCase {
     
     private let networkSpy = NetworkClientSpy()
     private let dataWithError = "".data(using: .utf8)
-    private let fetchMoviesUrlString = "http://www.omdbapi.com/?s=&apikey=15ef78e5"
+    private let fetchMoviesUrlString = "https://www.omdbapi.com/?s=&apikey=15ef78e5"
     private lazy var sut = MovieService(networkClient: networkSpy)
     
     func test_fetchMovies_shouldCallWithSuccess() {
@@ -42,7 +42,7 @@ final class MovieServiceTests: XCTestCase {
     
     func test_fetchMovies_givenUrl_shouldPassCorrectURLToPerformRequest() {
          sut.fetchMovies("") { _ in }
-         let passedUrlString = networkSpy.performRequestPassed?.description
+        guard let passedUrlString = networkSpy.performRequestPassed?.description else { return }
          
          XCTAssertEqual(passedUrlString, fetchMoviesUrlString)
      }

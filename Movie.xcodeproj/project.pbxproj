@@ -15,7 +15,6 @@
 		BB33B3C62B1963BD00092775 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB33B3C52B1963BD00092775 /* UITableViewCell+Extensions.swift */; };
 		BB33B3C82B1964AA00092775 /* MovieListViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB33B3C72B1964AA00092775 /* MovieListViewConfiguration.swift */; };
 		BB33B3CA2B198FBD00092775 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB33B3C92B198FBD00092775 /* UIImage+Extensions.swift */; };
-		BBA0F3242B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0F3232B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift */; };
 		BBA0F3282B18B1CC00ADA841 /* MovieListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0F3272B18B1CC00ADA841 /* MovieListCellView.swift */; };
 		BBBBF45C2B18102400B5CF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF45B2B18102400B5CF9B /* AppDelegate.swift */; };
 		BBBBF45E2B18102400B5CF9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF45D2B18102400B5CF9B /* SceneDelegate.swift */; };
@@ -65,7 +64,6 @@
 		BB33B3C52B1963BD00092775 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		BB33B3C72B1964AA00092775 /* MovieListViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewConfiguration.swift; sourceTree = "<group>"; };
 		BB33B3C92B198FBD00092775 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		BBA0F3232B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListCellViewSnapshotTests.swift; sourceTree = "<group>"; };
 		BBA0F3272B18B1CC00ADA841 /* MovieListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListCellView.swift; sourceTree = "<group>"; };
 		BBBBF4582B18102400B5CF9B /* Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBBF45B2B18102400B5CF9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 		BBA0F3222B18B1B900ADA841 /* SnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
-				BBA0F3232B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift */,
 				BBD4099F2B193A18008773F6 /* LoadingViewSnapshotTests.swift */,
 				BBD409A92B193D21008773F6 /* EmptyViewSnapshotTests.swift */,
 			);
@@ -610,7 +607,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBBBF4A12B1839A400B5CF9B /* NetworkClientSpy.swift in Sources */,
-				BBA0F3242B18B1B900ADA841 /* MovieListCellViewSnapshotTests.swift in Sources */,
 				BBD409A02B193A18008773F6 /* LoadingViewSnapshotTests.swift in Sources */,
 				BBBBF49F2B18323F00B5CF9B /* MovieDataJson.swift in Sources */,
 				BBD409AA2B193D21008773F6 /* EmptyViewSnapshotTests.swift in Sources */,
